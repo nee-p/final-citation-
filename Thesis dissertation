@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
   <info>
-    <title>HBMU Nrnzn Citation Style</title>
+    <title>Nrnzn Citation Style</title>
     <id>http://www.zotero.org/styles/hbmu-custom</id>
     <link href="http://www.zotero.org/styles/hbmu-custom" rel="self"/>
     <category citation-format="numeric"/>
@@ -18,12 +18,11 @@
     <names variable="author">
       <name delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="3" et-al-use-last="false"/>
     </names>
-    <text term="et-al" text-case="lowercase"/>
   </macro>
 
-  <!-- Citations in superscript with superscript small square brackets -->
-  <citation collapse="citation-number"> <!-- This ensures grouping like [25-28] -->
-    <layout prefix="[" suffix="]" delimiter="," vertical-align="sup"> 
+  <!-- Citations in superscript small square brackets -->
+  <citation collapse="citation-number"> <!-- Groups like [25-28] -->
+    <layout prefix="[" suffix="]" delimiter=", " vertical-align="sup"> 
       <text variable="citation-number"/>
     </layout>
   </citation>
