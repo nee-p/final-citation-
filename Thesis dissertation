@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
   <info>
-    <title>HBMU Citation Style</title>
+    <title>HBMU Nrnzn Citation Style</title>
     <id>http://www.zotero.org/styles/hbmu-custom</id>
     <link href="http://www.zotero.org/styles/hbmu-custom" rel="self"/>
     <category citation-format="numeric"/>
@@ -16,20 +16,21 @@
 
   <macro name="author">
     <names variable="author">
-      <name delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="3" et-al-use-last="true"/>
+      <name delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="3" et-al-use-last="false"/>
       <label form="long" prefix=" " suffix=""/>
     </names>
+    <text term="et-al" prefix=", " text-case="lowercase"/>
   </macro>
 
   <citation>
-    <layout prefix="[" suffix="]" delimiter=",">
-      <text variable="citation-number" vertical-align="sup"/>
+    <layout prefix="[" suffix="]" delimiter=", " vertical-align="sup">
+      <text variable="citation-number"/>
     </layout>
   </citation>
 
   <bibliography>
     <layout>
-      <text variable="citation-number" prefix="[" suffix="] "/> <!-- Space added after number -->
+      <text variable="citation-number" prefix="[" suffix="] " vertical-align="sup"/> <!-- Superscript brackets enclosing the number -->
       <group delimiter=". ">
         <text macro="author"/>
         <group delimiter=" ">
