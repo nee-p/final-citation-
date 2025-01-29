@@ -23,14 +23,14 @@
   </macro>
 
   <citation>
-    <layout prefix="[" suffix="]" delimiter=", " vertical-align="sup">
+    <layout prefix="[" suffix="]" delimiter=", " vertical-align="sup"> <!-- Superscript only in citation -->
       <text variable="citation-number"/>
     </layout>
   </citation>
 
   <bibliography>
     <layout>
-      <text variable="citation-number" prefix="[" suffix="] "/> <!-- Normal text, not superscript -->
+      <text variable="citation-number" prefix="[" suffix="] "/> <!-- Normal text in bibliography -->
       <group delimiter=". ">
         <text macro="author"/>
         <group>
