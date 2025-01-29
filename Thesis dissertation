@@ -16,27 +16,30 @@
 
   <macro name="author">
     <names variable="author">
-      <name delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="3"/>
-      <label form="long" prefix=" " suffix=""/>
+      <name delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="3" et-al-use-last="false"/>
     </names>
-    <text term="et-al" prefix=", " text-case="lowercase"/>
+    <text term="et-al" text-case="lowercase"/>
   </macro>
 
+  <!-- Citations in superscript with superscript brackets -->
   <citation>
-    <layout prefix="[" suffix="]" delimiter=", " vertical-align="sup"> <!-- Superscript only in citation -->
-      <text variable="citation-number"/>
+    <layout delimiter=", ">
+      <group prefix="[" suffix="]" vertical-align="sup">
+        <text variable="citation-number"/>
+      </group>
     </layout>
   </citation>
 
+  <!-- Bibliography with normal brackets and normal numbers -->
   <bibliography>
     <layout>
-      <text variable="citation-number" prefix="[" suffix="] "/> <!-- Normal text in bibliography -->
+      <text variable="citation-number" prefix="[" suffix="] "/> <!-- Normal brackets, normal number -->
       <group delimiter=". ">
         <text macro="author"/>
         <group>
           <text macro="title"/>
           <choose>
-            <!-- Journal Article [ J ] -->
+            <!-- Journal Article [J] -->
             <if type="article-journal">
               <text prefix=" [" value="J" suffix="] "/>
               <text variable="container-title"/>
