@@ -21,12 +21,10 @@
     <text term="et-al" text-case="lowercase"/>
   </macro>
 
-  <!-- Citations in superscript with superscript brackets -->
-  <citation>
-    <layout delimiter=", ">
-      <group prefix="[" suffix="]" vertical-align="sup">
-        <text variable="citation-number"/>
-      </group>
+  <!-- Citations in superscript with superscript small square brackets -->
+  <citation collapse="citation-number"> <!-- This ensures grouping like [25-28] -->
+    <layout prefix="[" suffix="]" delimiter="," vertical-align="sup"> 
+      <text variable="citation-number"/>
     </layout>
   </citation>
 
