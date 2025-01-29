@@ -21,7 +21,7 @@
     <text term="et-al" text-case="lowercase"/>
   </macro>
 
-  <!-- Citations in superscript with square brackets -->
+  <!-- Citations in superscript with superscript brackets -->
   <citation>
     <layout delimiter=", ">
       <group prefix="[" suffix="]" vertical-align="sup">
@@ -30,7 +30,7 @@
     </layout>
   </citation>
 
-  <!-- Bibliography with normal numbers inside square brackets -->
+  <!-- Bibliography with normal brackets and normal numbers -->
   <bibliography>
     <layout>
       <text variable="citation-number" prefix="[" suffix="] "/> <!-- Normal brackets, normal number -->
