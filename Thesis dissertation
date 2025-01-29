@@ -9,14 +9,14 @@
     <updated>2023-10-15T18:30:00+00:00</updated>
     <rights license="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</rights>
   </info>
-  
+
   <macro name="title">
     <text variable="title"/>
   </macro>
 
   <macro name="author">
     <names variable="author">
-      <name delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="3" et-al-use-last="false"/>
+      <name delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="3"/>
       <label form="long" prefix=" " suffix=""/>
     </names>
     <text term="et-al" prefix=", " text-case="lowercase"/>
@@ -30,18 +30,18 @@
 
   <bibliography>
     <layout>
-      <text variable="citation-number" prefix="[" suffix="] " vertical-align="sup"/> <!-- Superscript brackets enclosing the number -->
+      <text variable="citation-number" prefix="[" suffix="] "/> <!-- Normal text, not superscript -->
       <group delimiter=". ">
         <text macro="author"/>
-        <group delimiter=" ">
-          <text macro="title" suffix=". "/>
+        <group>
+          <text macro="title"/>
           <choose>
-            <!-- Journal Article [J] -->
+            <!-- Journal Article [ J ] -->
             <if type="article-journal">
-              <text prefix="[" suffix="] " value="J"/> <!-- Ensuring correct placement -->
-              <text variable="container-title" suffix=", "/>
-              <date variable="issued" form="numeric" date-parts="year" suffix=" "/>
-              <group delimiter="">
+              <text prefix=" [" value="J" suffix="] "/>
+              <text variable="container-title"/>
+              <date variable="issued" form="numeric" date-parts="year" prefix=", "/>
+              <group prefix=", " delimiter="">
                 <text variable="volume"/>
                 <text variable="issue" prefix="(" suffix=")"/>
                 <text variable="page" prefix=": "/>
@@ -49,16 +49,15 @@
             </if>
             <!-- Book [M] -->
             <else-if type="book">
-              <text value="[M]. "/>
+              <text value=" [M]. "/>
               <text variable="publisher-place" suffix=": "/>
               <text variable="publisher" suffix=", "/>
               <date variable="issued" form="numeric" date-parts="year"/>
               <text variable="page" prefix=": "/>
             </else-if>
-            <!-- Conference Paper [A] -->
-            <else-if type="paper-conference">
-              <text value="[A]. In: "/>
-              <text variable="container-title" prefix="[" suffix="C]. "/>
+            <!-- Thesis/Dissertation [D] -->
+            <else-if type="thesis">
+              <text value=" [D]. "/>
               <text variable="publisher-place" suffix=": "/>
               <text variable="publisher" suffix=", "/>
               <date variable="issued" form="numeric" date-parts="year"/>
