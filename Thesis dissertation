@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
   <info>
-    <title>Nrnzn Citation Style</title>
+    <title>HBMU Nrnzn Citation Style</title>
     <id>http://www.zotero.org/styles/hbmu-custom</id>
     <link href="http://www.zotero.org/styles/hbmu-custom" rel="self"/>
     <category citation-format="numeric"/>
@@ -14,6 +14,7 @@
     <text variable="title"/>
   </macro>
 
+  <!-- Fix for "et al." appearing twice -->
   <macro name="author">
     <names variable="author">
       <name delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="3" et-al-use-last="false"/>
